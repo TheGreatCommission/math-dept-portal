@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Dept | Dashboard</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body class="dashboard-layout">
+
+    <aside class="sidebar">
+        <h2>Math Dept</h2>
+        <p class="user-greeting">Hello, <span id="username">Teacher</span></p>
+        
+        <nav class="grade-nav">
+            <p class="nav-label">Select Grade Level:</p>
+            <button class="grade-btn active" onclick="selectGrade(event, 'Grade 7')">Grade 7</button>
+            <button class="grade-btn" onclick="selectGrade(event, 'Grade 8')">Grade 8</button>
+            <button class="grade-btn" onclick="selectGrade(event, 'Grade 9')">Grade 9</button>
+            <button class="grade-btn" onclick="selectGrade(event, 'Grade 10')">Grade 10</button>
+        </nav>
+        
+        <button id="logout-btn" class="logout-btn">Sign Out</button>
+    </aside>
+
+    <main class="main-content">
+        <div class="content-header">
+            <h2 id="current-grade-display">Grade 7 Workspace</h2>
+            <p class="helper-text">Files displayed below are synced directly from the Department OneDrive.</p>
+        </div>
+
+        <nav class="tab-nav">
+            <button class="tab-btn active" onclick="openTab(event, 'dll-tab')">DLL / LE</button>
+            <button class="tab-btn" onclick="openTab(event, 'resources-tab')">Learning Resources</button>
+            <button class="tab-btn" onclick="openTab(event, 'other-tab')">Other Files</button>
+        </nav>
+
+        <section id="dll-tab" class="tab-content active">
+            <h3>Daily Lesson Logs & Learning Exemplars</h3>
+            <div id="dll-file-list" class="file-list-container">
+                </div>
+        </section>
+
+        <section id="resources-tab" class="tab-content">
+            <h3>Learning Resources</h3>
+            <div id="resources-file-list" class="file-list-container">
+                </div>
+        </section>
+
+        <section id="other-tab" class="tab-content">
+            <h3>Other Files</h3>
+            <div id="other-file-list" class="file-list-container">
+                </div>
+        </section>
+    </main>
+
+    <script src="src/dashboard.js"></script>
